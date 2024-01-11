@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <header>
-        <h2>React CRUD operations using PHP API and MYSQL</h2>
+        <h2>React CRUD Operations With PHP API & MYSQL</h2>
       </header>
       <BrowserRouter>
         <nav>
@@ -25,7 +25,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route index element={<ListUser />} />
+          <Route path="/" element={<ListUser />} />
           <Route path="user/create" element={<CreateUser />} />
           <Route path="user/:id/edit" element={<EditUser />} />
         </Routes>

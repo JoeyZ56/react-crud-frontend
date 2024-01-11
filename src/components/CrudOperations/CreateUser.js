@@ -1,17 +1,21 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateUser = () => {
   const [inputs, setInputs] = useState({});
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     //axios.post excepts 2 or 3 parameters "URL", "DATA", "CONFIG
-    axios.post(
-      "http://localhost:80/react-crud-operations-api/users/save",
-      inputs
-    );
+    axios
+      .post("http://localhost:80/react-crud-operations-api/users/save", inputs)
+      .then(function (res) {
+        console.log(res.data);
+        navigate("/"); // Redirect to Home Page
+      });
     console.log(inputs);
   };
 
